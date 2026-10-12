@@ -35,7 +35,7 @@ return {
 				"lua_ls",
 				"html",
 				"cssls",
-				"cmake",
+				"neocmake",
 				"jsonls",
 				"yamlls",
 				"marksman",
