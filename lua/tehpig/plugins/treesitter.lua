@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master", -- this config uses the (legacy) master API; main is not compatible
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   dependencies = {
@@ -16,10 +17,6 @@ return {
       },
       -- enable indentation
       indent = { enable = true },
-      -- enable autotagging (w/ nvim-ts-autotag plugin)
-      autotag = {
-        enable = true,
-      },
       -- ensure these language parsers are installed
       ensure_installed = {
         "json",
@@ -53,5 +50,8 @@ return {
         },
       },
     })
+
+    -- autotagging (nvim-ts-autotag v2 API)
+    require("nvim-ts-autotag").setup()
   end,
 }
