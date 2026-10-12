@@ -3,9 +3,12 @@ return {
   config = function()
     local auto_session = require("auto-session")
 
+    -- required for filetype/highlighting and all buffers to restore correctly
+    vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
     auto_session.setup({
-      auto_restore_enabled = false,
-      auto_session_suppress_dirs = { "/Downloads", "/Desktop", "Documents" }
+      auto_restore = false,
+      suppressed_dirs = { "/Downloads", "/Desktop", "Documents" }
     })
 
     local keymap = vim.keymap
